@@ -1,8 +1,18 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import { Text } from 'react-native';
+import { Provider } from 'react-redux';
 
-function App(): JSX.Element {
-  return <Text>asdasd</Text>;
+import { AppNavigator } from './navigators';
+import { store } from './redux/store';
+
+function App() {
+  return (
+    <Provider store={store}>
+      <NavigationContainer>
+        <AppNavigator />
+      </NavigationContainer>
+    </Provider>
+  );
 }
 
 export default App;
